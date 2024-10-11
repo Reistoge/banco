@@ -1,12 +1,18 @@
 package cl.ucn.bean;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="cliente")
 public class Cliente {
 
+	@Id
 	int rut;
 	String nombre;
 	int sueldo;
-	
-	
+
 	public int getRut() {
 		return rut;
 	}

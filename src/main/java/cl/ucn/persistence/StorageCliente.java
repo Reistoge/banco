@@ -11,7 +11,7 @@ import jakarta.persistence.Query;
 @LocalBean
 public class StorageCliente implements IStorageCliente{
 
-	@PersistenceContext
+	@PersistenceContext(unitName = "bancoappPersistenceUnit")
 	protected EntityManager em;
 
 	@Override

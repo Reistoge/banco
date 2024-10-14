@@ -4,7 +4,7 @@ import cl.ucn.bean.Cliente;
 
 public interface IStorageCliente {
 
-	public Cliente getCliente(int rut);
-	public void guardarCliente(Cliente cliente);
-	public void eliminarCliente(int rut);
+	Cliente getCliente(int rut);
+	void guardarCliente(Cliente cliente);
+	void eliminarCliente(int rut);
 }

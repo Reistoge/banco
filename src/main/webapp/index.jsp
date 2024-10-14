@@ -5,8 +5,8 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1><%= "Desarrollo de un Sistema Bancario con Jakarta-JFaces MVC" %></h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="ingresarCliente.xhtml">Agregar un cliente</a>
 </body>
 </html>

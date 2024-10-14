@@ -19,8 +19,7 @@ public class StorageCliente implements IStorageCliente{
 		// TODO Auto-generated method stub
 		Query q = em.createQuery("SELECT p FROM Cliente p WHERE p.rut = :rut");
 		q.setParameter("rut", rut);
-		Cliente cliente = (Cliente) q.getSingleResult();
-		return cliente;
+        return (Cliente) q.getSingleResult();
 	}
 
 	@Override

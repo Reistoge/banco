@@ -8,7 +8,6 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
 @Stateless
-@LocalBean
 public class StorageCliente implements IStorageCliente{
 
 	@PersistenceContext(unitName = "bancoappPersistenceUnit")

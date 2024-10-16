@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 
+@LocalBean
 @Stateless
 public class StorageCliente implements IStorageCliente{
 

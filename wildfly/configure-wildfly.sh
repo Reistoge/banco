@@ -18,7 +18,7 @@ echo "WildFly started."
     --name=PostgresDS \
     --driver-name=postgresql \
     --jndi-name=java:/PostgresDS \
-    --connection-url=jdbc:postgresql://kind_curie:5432/banco \
+    --connection-url=jdbc:postgresql://172.18.0.2:5432/banco \
     --user-name=sa \
     --password=sa \
     --driver-class=org.postgresql.Driver"

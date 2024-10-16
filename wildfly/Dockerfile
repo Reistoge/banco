@@ -1,8 +1,7 @@
 FROM quay.io/wildfly/wildfly
 RUN /opt/jboss/wildfly/bin/add-user.sh admin 123 --silent
-CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+
 # Download PostgreSQL JDBC Driver
-FROM jboss/wildfly-admin
 RUN cd /opt/jboss/wildfly && \
     mkdir -p /opt/jboss/wildfly/modules/org/postgresql/main && \
     curl -O https://jdbc.postgresql.org/download/postgresql-42.7.4.jar && \
@@ -22,14 +21,15 @@ RUN echo '<?xml version="1.0" encoding="UTF-8"?> \
 
 # Copy the configuration script to the image
 COPY configure-wildfly.sh /opt/jboss/wildfly/bin/
-ADD bancoapp.war /opt/jboss/wildfly/standalone/deployments/
+
 # Switch to root to change permissions and copy the JDBC driver
 USER root
 # Make the script executable
 RUN chmod +x /opt/jboss/wildfly/bin/configure-wildfly.sh
-RUN /opt/jboss/wildfly/bin/add-user.sh admin 123 --silent
 # Switch back to WildFly user
 USER jboss
+
+ADD bancoapp.war /opt/jboss/wildfly/standalone/deployments/
 
 # Expose management and application ports
 EXPOSE 8080 9990

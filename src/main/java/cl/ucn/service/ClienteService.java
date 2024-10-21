@@ -8,7 +8,6 @@ import jakarta.transaction.Transactional;
 
 import java.io.Serializable;
 
-@Named
 public class ClienteService  {
 
     @Inject

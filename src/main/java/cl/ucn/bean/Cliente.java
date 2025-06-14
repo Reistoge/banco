@@ -31,5 +31,5 @@ public class Cliente {
 	public void setSueldo(int sueldo) {
 		this.sueldo = sueldo;
 	}
-	
+
 }
